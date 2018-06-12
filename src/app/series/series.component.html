@@ -1,0 +1,26 @@
+<p>
+  series works!
+</p>
+
+<h2>My Series</h2>
+<ul class="heroes">
+  <li *ngFor="let serie of series" [class.selected]="serie === selectedSerie" (click)="onSelect(serie)">
+    
+    <span class="badge">{{serie.id}}</span> {{ serie.name }} 
+    <span *ngIf="serie.finished; then thenTemplateName; else elseTemplateName">En cours ou terminée ?</span>
+    <!-- <span *ngIf="!serie.finished">En cours</span> -->
+    <ng-template #thenTemplateName>
+      (Terminée, {{ serie.numberSeasons }} saisons, {{ serie.numberEpisodes }} épisodes)
+  </ng-template>
+  
+  <ng-template #elseTemplateName>
+      (En Cours, {{ serie.numberSeasons }} saisons, {{ serie.numberEpisodes }} épisodes)
+  </ng-template>
+
+      <span></span>
+  </li>
+</ul>
+
+<app-seasons></app-seasons>
+
+
