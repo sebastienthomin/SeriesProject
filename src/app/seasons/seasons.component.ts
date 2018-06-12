@@ -1,5 +1,8 @@
+import { SeasonService } from './../season.service';
+import { MessageService } from './../message.service';
 import { Component, OnInit } from '@angular/core';
 import { SEASONS } from '../mock-seasons';
+import { Season } from '../season';
 
 @Component({
   selector: 'app-seasons',
@@ -8,11 +11,17 @@ import { SEASONS } from '../mock-seasons';
 })
 export class SeasonsComponent implements OnInit {
 
-  seasons = SEASONS;
+  seasons: Season[] = [];
 
-  constructor() { }
+  constructor(private seasonService: SeasonService) { }
 
   ngOnInit() {
+    this.getSeasons();
+  }
+
+  getSeasons(): void {
+    this.seasonService.getSeasons()
+    .subscribe(seasons => this.seasons = seasons);
   }
 
 }

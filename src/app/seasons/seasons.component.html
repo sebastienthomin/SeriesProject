@@ -1,5 +1,11 @@
-<p>
-  seasons works!
-</p>
+
+<h2>My Seasons</h2>
+<ul class="heroes">
+  <li *ngFor="let season of seasons">
+      
+    <span class="badge">{{season.id}}</span> Saison n°{{ season.numSeason }} 
+  
+  </li>
+  </ul>
 
 <app-episodes></app-episodes>

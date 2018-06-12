@@ -1,3 +1,5 @@
+import { SeasonService } from './season.service';
+import { EpisodeService } from './episode.service';
 import { MessageService } from './message.service';
 import { SerieService } from './serie.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +25,7 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     BrowserModule
   ],
-  providers: [SerieService, MessageService],
+  providers: [SerieService, MessageService, EpisodeService, SeasonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

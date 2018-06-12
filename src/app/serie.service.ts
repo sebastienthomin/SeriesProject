@@ -21,9 +21,6 @@ export class SerieService {
     return of(SERIES);
   } 
 
-  getEpisodes(): Observable<Episode[]> {
-    this.messageService.add('SerieService : Episodes chargés');
-    return of(EPISODES);
-  }
+  
 
 }

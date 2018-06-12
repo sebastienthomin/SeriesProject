@@ -1,5 +1,9 @@
-<p>
-  episodes works!
-</p>
 
+<h2>My Episodes</h2>
+<ul class="heroes">
+<li *ngFor="let episode of episodes">
+    
+  <span class="badge">{{episode.id}}</span> {{ episode.title }} 
 
+</li>
+</ul>

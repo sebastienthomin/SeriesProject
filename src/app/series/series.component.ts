@@ -31,7 +31,8 @@ export class SeriesComponent implements OnInit {
   }
   
   getSeries(): void {
-    this.serieService.getSeries().subscribe(series => this.series = series);
+    this.serieService.getSeries()
+    .subscribe(series => this.series = series);
   }
 
 }
